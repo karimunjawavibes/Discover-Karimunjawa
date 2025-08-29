@@ -4,40 +4,240 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paket Wisata Karimunjawa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: 'Segoe UI', sans-serif; line-height:1.6; color:#333; background:#f9f9f9;}
-    a {text-decoration:none;}
-    nav {background:#008c9e; padding:15px 30px; position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center;}
-    nav .logo {color:white; font-size:1.3em; font-weight:bold;}
+    body {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      line-height:1.7;
+      color:#2c3e50;
+      background:#f4f7fa;
+    }
+    a {text-decoration:none; transition:.3s;}
+    nav {
+      background: rgba(0,140,158,0.85);
+      padding:15px 30px;
+      position:sticky; top:0; z-index:100;
+      display:flex; justify-content:space-between; align-items:center;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 18px rgba(0,0,0,0.05);
+    }
+    nav .logo {
+      color:#fff;
+      font-size:1.7em;
+      font-family: 'Playfair Display', serif;
+      font-weight:700;
+      letter-spacing:2px;
+      text-shadow:0 2px 8px rgba(0,0,0,0.12);
+    }
     nav ul {list-style:none; display:flex;}
-    nav li {margin-left:20px;}
-    nav a {color:white; font-weight:500; transition:0.3s;}
-    nav a:hover {color:#ffd166;}
-    header {background:url('https://source.unsplash.com/1600x900/?karimunjawa,beach,indonesia') no-repeat center/cover; height:90vh; display:flex; justify-content:center; align-items:center; text-align:center; color:white; position:relative;}
-    header::after {content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.45);}
-    header .hero-content {position:relative; z-index:1;}
-    header h1 {font-size:3em; margin-bottom:15px; animation: fadeInDown 1s;}
-    header p {font-size:1.2em; margin-bottom:20px;}
-    .btn-primary {background:#ffd166; color:#333; padding:12px 20px; border-radius:8px; font-weight:bold; transition:0.3s;}
-    .btn-primary:hover {background:#ffb703; color:white;}
-    section {padding:60px 20px; max-width:1100px; margin:auto;}
-    h2 {color:#008c9e; text-align:center; margin-bottom:40px; font-size:2em;}
-    .paket {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
-    .card {background:white; border-radius:15px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s;}
-    .card:hover {transform:translateY(-5px);}
-    .card img {width:100%; height:200px; object-fit:cover;}
-    .card-body {padding:20px;}
-    .card-body h3 {margin-bottom:10px; color:#008c9e;}
-    .btn {display:inline-block; background:#008c9e; color:white; padding:10px 15px; margin-top:15px; border-radius:8px; font-weight:500;}
-    .btn:hover {background:#005f67;}
-    .fasilitas ul {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; list-style:none; padding:0;}
-    .fasilitas li {background:white; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
-    .kontak {text-align:center;}
-    .kontak p {margin:10px 0;}
+    nav li {margin-left:30px;}
+    nav a {
+      color:#fff;
+      font-weight:500;
+      font-size:1.05em;
+      padding:6px 18px;
+      border-radius:6px;
+    }
+    nav a:hover {
+      background:rgba(255,255,255,0.13);
+      color:#ffd166;
+    }
+    header {
+      background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
+      min-height:92vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    header::before {
+      content:"";
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      background:linear-gradient(120deg,rgba(0,140,158,0.25) 40%,rgba(255,255,255,0.14) 100%);
+      z-index:1;
+    }
+    .hero-card {
+      position:relative;
+      z-index:2;
+      background:rgba(255,255,255,0.32);
+      backdrop-filter:blur(8px);
+      border-radius:30px;
+      padding:50px 60px;
+      box-shadow:0 8px 40px rgba(0,0,0,0.17);
+      text-align:center;
+      max-width:540px;
+      border:1.5px solid rgba(255,255,255,0.30);
+      margin:30px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size:2.7em;
+      color:#006e7c;
+      margin-bottom:15px;
+      text-shadow:0 2px 16px rgba(255,255,255,0.24);
+      letter-spacing:1.5px;
+      animation: fadeInDown 0.9s;
+    }
+    header p {
+      font-size:1.23em;
+      margin-bottom:28px;
+      color:#22404a;
+      letter-spacing:0.1em;
+      font-weight:500;
+    }
+    .btn-primary {
+      background:linear-gradient(90deg,#ffd166 60%,#ffb703 100%);
+      color:#2c3e50;
+      padding:16px 38px;
+      border-radius:12px;
+      font-weight:bold;
+      border:none;
+      font-size:1.1em;
+      letter-spacing:0.1em;
+      box-shadow:0 2px 14px rgba(255,209,102,0.14);
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .btn-primary:hover {
+      color:white;
+      background:linear-gradient(90deg,#ffb703 60%,#ffd166 100%);
+      box-shadow:0 6px 32px rgba(255,209,102,0.18);
+    }
+    section {
+      padding:64px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+    h2 {
+      color:#008c9e;
+      text-align:center;
+      margin-bottom:44px;
+      font-size:2.2em;
+      font-family: 'Playfair Display', serif;
+      font-weight:700;
+    }
+    .paket {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+    .card {
+      background:rgba(255,255,255,0.86);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 4px 24px rgba(0,140,158,0.10);
+      transition:transform 0.3s, box-shadow 0.3s;
+      border:1.2px solid rgba(0,140,158,0.08);
+      backdrop-filter:blur(6px);
+      position:relative;
+    }
+    .card::after {
+      content:"";
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      background:linear-gradient(120deg,rgba(0,140,158,0.09) 20%,rgba(255,255,255,0.03));
+      z-index:1;
+      pointer-events:none;
+    }
+    .card:hover {
+      transform:translateY(-8px) scale(1.025);
+      box-shadow:0 12px 44px rgba(0,140,158,0.12);
+    }
+    .card img {
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+      border-radius:18px 18px 0 0;
+      filter:saturate(1.08) contrast(1.09) brightness(1.02);
+      box-shadow:0 2px 12px rgba(0,140,158,0.04);
+    }
+    .card-body {
+      padding:28px;
+      position:relative;
+      z-index:2;
+    }
+    .card-body h3 {
+      margin-bottom:14px;
+      color:#008c9e;
+      font-family:'Playfair Display',serif;
+      font-size:1.35em;
+      font-weight:700;
+    }
+    .card-body p {
+      color:#34495e;
+      margin-bottom:18px;
+      font-size:1.06em;
+    }
+    .btn {
+      display:inline-block;
+      background:linear-gradient(90deg,#008c9e 70%,#00a6b7 100%);
+      color:white;
+      padding:10px 22px;
+      border-radius:8px;
+      font-weight:500;
+      font-size:1em;
+      letter-spacing:0.08em;
+      border:none;
+      box-shadow:0 2px 12px rgba(0,140,158,0.09);
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .btn:hover {
+      background:linear-gradient(90deg,#00a6b7 70%,#008c9e 100%);
+      color:#ffd166;
+      box-shadow:0 6px 22px rgba(0,140,158,0.11);
+    }
+    .fasilitas ul {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .fasilitas li {
+      background:rgba(255,255,255,0.91);
+      padding:22px;
+      border-radius:13px;
+      box-shadow:0 2px 12px rgba(0,140,158,0.09);
+      font-size:1.1em;
+      color:#166d7a;
+      font-weight:500;
+      display:flex; align-items:center;
+      gap:12px;
+    }
+    .fasilitas li::before {
+      font-size:1.4em;
+    }
+    .kontak {
+      text-align:center;
+    }
+    .kontak p {margin:12px 0;}
     .kontak a {color:#008c9e; font-weight:bold;}
-    footer {background:#008c9e; color:white; text-align:center; padding:25px; margin-top:40px;}
-    @keyframes fadeInDown {from {opacity:0; transform:translateY(-50px);} to {opacity:1; transform:translateY(0);}}
+    .kontak a:hover {color:#ffb703;}
+    footer {
+      background:linear-gradient(90deg,#008c9e 80%,#00a6b7 100%);
+      color:white;
+      text-align:center;
+      padding:32px 12px 26px 12px;
+      margin-top:54px;
+      font-size:1.08em;
+      letter-spacing:0.05em;
+      font-family:'Montserrat',sans-serif;
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform:translateY(-50px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @media (max-width:700px) {
+      .hero-card {padding:32px 14px;}
+      header h1 {font-size:2em;}
+      section {padding:40px 7px;}
+    }
   </style>
 </head>
 <body>
@@ -50,9 +250,9 @@
     </ul>
   </nav>
   <header>
-    <div class="hero-content">
+    <div class="hero-card">
       <h1>Jelajahi Surga Karimunjawa</h1>
-      <p>Paket wisata murah, lengkap, dan nyaman untuk liburan impian Anda</p>
+      <p>Rasakan liburan mewah, eksklusif, dan tak terlupakan dengan view pantai yang menakjubkan. Paket lengkap untuk pengalaman istimewa Anda.</p>
       <a href="#paket" class="btn-primary">Lihat Paket</a>
     </div>
   </header>
@@ -60,26 +260,26 @@
     <h2>Paket Wisata Karimunjawa</h2>
     <div class="paket">
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?island,sea" alt="3D2N">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="3D2N">
         <div class="card-body">
           <h3>Paket 3D2N</h3>
-          <p>Mulai dari Rp 1.200.000/orang. Termasuk penginapan, makan, tour laut & snorkeling.</p>
+          <p>Mulai dari <b>Rp 1.200.000/orang</b>. Termasuk penginapan mewah, makan, tour laut & snorkeling.</p>
           <a href="#kontak" class="btn">Pesan Sekarang</a>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?snorkeling,boat" alt="4D3N">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="4D3N">
         <div class="card-body">
           <h3>Paket 4D3N</h3>
-          <p>Mulai dari Rp 1.600.000/orang. Lebih banyak destinasi, pantai, dan waktu santai.</p>
+          <p>Mulai dari <b>Rp 1.600.000/orang</b>. Lebih banyak destinasi, pantai, aktivitas santai, dan pengalaman eksklusif.</p>
           <a href="#kontak" class="btn">Pesan Sekarang</a>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?honeymoon,beach" alt="Honeymoon">
+        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80" alt="Honeymoon">
         <div class="card-body">
           <h3>Paket Honeymoon</h3>
-          <p>Mulai dari Rp 2.500.000/pasangan. Private trip, resort romantis, dan sunset dinner.</p>
+          <p>Mulai dari <b>Rp 2.500.000/pasangan</b>. Private trip, resort romantis, sunset dinner di tepi pantai.</p>
           <a href="#kontak" class="btn">Pesan Sekarang</a>
         </div>
       </div>
@@ -88,12 +288,12 @@
   <section id="fasilitas" class="fasilitas">
     <h2>Fasilitas Termasuk</h2>
     <ul>
-      <li>🏝 Penginapan homestay Ac</li>
-      <li>⛴ Tiket kapal PP</li>
-      <li>🍽 Makan 3x sehari</li>
+      <li>🏝 Penginapan homestay AC / resort tepi pantai</li>
+      <li>⛴ Tiket kapal PP (eksekutif)</li>
+      <li>🍽 Makan 3x sehari dengan menu spesial</li>
       <li>🤿 Alat snorkeling lengkap</li>
-      <li>🚐 Transportasi lokal</li>
-      <li>🧑‍🤝‍🧑 Guide lokal berpengalaman</li>
+      <li>🚐 Transportasi lokal premium</li>
+      <li>🧑‍🤝‍🧑 Guide lokal profesional</li>
     </ul>
   </section>
   <section id="kontak" class="kontak">
