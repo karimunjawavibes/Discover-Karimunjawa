@@ -1,0 +1,15 @@
+# Panduan Upload Website Karimunjawa ke GitHub Pages
+
+1. Buat akun GitHub di https://github.com (jika belum punya).
+2. Klik tombol "New Repository".
+   - Nama repo misalnya: karimunjawa-tour
+   - Pilih Public
+   - Klik Create Repository
+3. Upload file index.html ke repository tersebut.
+4. Masuk ke Settings > Pages
+   - Pilih branch: main
+   - Pilih folder: / (root)
+   - Klik Save
+5. Tunggu 1-2 menit, lalu akses website di:
+   https://USERNAME.github.io/karimunjawa-tour
+   (ganti USERNAME dengan username GitHub Anda)
